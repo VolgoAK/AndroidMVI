@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidMVI</string>
+    <string name="date_placeholder">25.02.2001</string>
+</resources>
