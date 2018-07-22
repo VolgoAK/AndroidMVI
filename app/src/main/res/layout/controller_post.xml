@@ -5,80 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/view_common_margin"
-                android:textAppearance="@style/TitleTextStyle"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Big Brother loves you"/>
-
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/SecondaryTextStyle"
-                app:layout_constraintTop_toBottomOf="@id/tvTitle"
-                app:layout_constraintLeft_toLeftOf="@id/tvTitle"
-                android:layout_marginTop="@dimen/view_common_margin"
-                tools:text="21 jun 1984"/>
-
-            <View
-                android:id="@+id/divider"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/colorDivider"
-                android:layout_marginTop="@dimen/view_common_margin"
-                app:layout_constraintTop_toBottomOf="@id/tvDate"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvContent"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/ContentTextStyle"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider"
-                android:layout_margin="@dimen/view_common_margin" />
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_common_margin"
+                    android:textAppearance="@style/TitleTextStyle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Big Brother loves you"/>
 
-            <View
-                android:id="@+id/divider2"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:background="@color/colorDivider"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvContent"
-                android:layout_marginTop="@dimen/view_common_margin"/>
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/SecondaryTextStyle"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+                    android:layout_marginTop="@dimen/view_common_margin"
+                    tools:text="21 jun 1984"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvComments"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/divider2"/>
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorDivider"
+                    android:layout_marginTop="@dimen/view_common_margin"
+                    app:layout_constraintTop_toBottomOf="@id/tvDate"/>
 
-        </android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/tvContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/ContentTextStyle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider"
+                    android:layout_margin="@dimen/view_common_margin" />
 
-    </android.support.v4.widget.NestedScrollView>
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorDivider"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvContent"
+                    android:layout_marginTop="@dimen/view_common_margin"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvComments"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/divider2"/>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <FrameLayout
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
         android:background="@color/colorWhite">
 
         <ProgressBar

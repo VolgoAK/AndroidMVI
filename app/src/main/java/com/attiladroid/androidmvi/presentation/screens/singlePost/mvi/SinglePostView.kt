@@ -4,6 +4,8 @@ import io.reactivex.Observable
 import ru.wearemad.cleanarcexm.presentation.mvi.global.BaseView
 
 interface SinglePostView : BaseView {
-    fun loadPostIntent(): Observable<Long>
-    fun loadCommentsIntent(): Observable<Long>
+    fun refreshPostIntent(): Observable<Long>
+    fun refreshCommentsIntent(): Observable<Long>
+    fun loadPostInitial(): Observable<Long>
+    fun loadCommentInitial(): Observable<Long>
 }

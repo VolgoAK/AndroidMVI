@@ -16,6 +16,10 @@ fun View.makeVisible() {
     this.visibility = View.VISIBLE
 }
 
+fun View.setVisibility(visible: Boolean) {
+    this.visibility = if(visible) View.VISIBLE else View.GONE
+}
+
 fun ViewGroup.inflate(@LayoutRes id: Int, attachToParent: Boolean = false): View {
     return LayoutInflater.from(this.context).inflate(id, this, false)
 }
